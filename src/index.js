@@ -4,17 +4,20 @@ import './index.css';
 import App from './app/layout/App';
 import * as serviceWorker from './serviceWorker';
 
-const rootEl = document.getElementById('root');
+ReactDOM.render(<App />, document.getElementById('root'));
 
-let render = () => {
-  ReactDOM.render(<App />, rootEl)
-}
+// const rootEl = document.getElementById('root');
 
-if (module.hot) {
-  module.hot.accept('./app/layout/App', () => {
-    setTimeout(render);
-  })
-}
+// let render = () => {
+//   ReactDOM.render(<App />, rootEl)
+// }
+
+// if (module.hot) {
+//   module.hot.accept('./app/layout/App', () => {
+//     setTimeout(render);
+//   });
+// }
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
