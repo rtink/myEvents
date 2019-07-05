@@ -9,8 +9,8 @@ import PeopleDashboard from '../../features/user/PeopleDashboard/PeopleDashboard
 import UserDetailedPage from '../../features/user/UserDetailed/UserDetailedPage';
 import SettingsDashboard from '../../features/user/Settings/SettingsDashboard';
 import EventForm from '../../features/event/EventForm/EventForm';
-import TestComponent from '../../features/testarea/TestComponent';
 import ModalManager from '../../features/modals/ModalManager';
+// import TestComponent from '../../features/testarea/TestComponent';
 
 class App extends Component {
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
                   <Route path='/profile/:id' component={UserDetailedPage} />
                   <Route path='/settings' component={SettingsDashboard} />
                   <Route path={['/createEvent', '/manage/:id']} component={EventForm} />
-                  <Route path='/test' component={TestComponent} />
+                  {/* <Route path='/test' component={TestComponent} /> */}
                 </Switch>
                 
               </Container>
