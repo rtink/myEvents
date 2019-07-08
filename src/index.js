@@ -12,29 +12,45 @@ import ScrollToTop from './app/common/util/ScrollToTop';
 
 const store = configureStore();
 
-// console.log(store.getState());
+const rootEl = document.getElementById('root');
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <ScrollToTop>
-        <ReduxToastr 
-          position='bottom-right'
-          transitionIn='bounceInDown'
-          transitionOut='bounceOutUp'
-        />
-        <App />
-      </ScrollToTop>
-    </BrowserRouter>
-  </Provider>,
-document.getElementById('root')
-);
+let render = () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <ScrollToTop>
+          <ReduxToastr 
+            position='bottom-right'
+            transitionIn='bounceInDown'
+            transitionOut='bounceOutUp'
+          />
+          <App />
+        </ScrollToTop>
+      </BrowserRouter>
+    </Provider>,
+    rootEl
+  );
+};
 
-// const rootEl = document.getElementById('root');
+store.firebaseAuthIsReady.then(() => {
+  render();
+});
 
-// let render = () => {
-//   ReactDOM.render(<App />, rootEl)
-// }
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <ScrollToTop>
+//         <ReduxToastr 
+//           position='bottom-right'
+//           transitionIn='bounceInDown'
+//           transitionOut='bounceOutUp'
+//         />
+//         <App />
+//       </ScrollToTop>
+//     </BrowserRouter>
+//   </Provider>,
+// document.getElementById('root')
+// );
 
 // if (module.hot) {
 //   module.hot.accept('./app/layout/App', () => {
