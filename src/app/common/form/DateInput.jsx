@@ -17,16 +17,15 @@ const DateInput = ({
       <DatePicker 
         {...rest}
         placeholderText={placeholder}
-        selected={value ? new Date(value) : null}
-        // selected={
-        //   value
-        //     ? Object.prototype.toString.call(value) !== '[object Date]'
-        //       ? value.toDate()
-        //       : value
-        //     : null
-        // }
+        selected={
+          value
+            ? Object.prototype.toString.call(value) !== '[object Date]'
+              ? value.toDate()
+              : value
+            : null
+        }
         onChange={onChange}
-        onBlur={onBlur}
+        onBlur={(e, val) => onBlur(val)}
         onChangeRaw={(e) => e.preventDefault()}
       />
       {touched && error && <Label basic color='red'>{error}</Label>}

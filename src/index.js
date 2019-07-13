@@ -19,10 +19,13 @@ let render = () => {
     <Provider store={store}>
       <BrowserRouter>
         <ScrollToTop>
-          <ReduxToastr 
+          <ReduxToastr
+            timeOut={4000}
             position='bottom-right'
             transitionIn='bounceInDown'
             transitionOut='bounceOutUp'
+            progressBar
+            closeOnToastrClick
           />
           <App />
         </ScrollToTop>

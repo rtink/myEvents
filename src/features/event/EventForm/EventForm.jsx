@@ -128,7 +128,7 @@ class EventForm extends Component {
                 name='category'
                 component={SelectInput}
                 options={category}
-                // multiple={true}
+                fluid multiple selection
                 placeholder='What is your event about?'
               />
               <Field 
@@ -162,7 +162,7 @@ class EventForm extends Component {
                 dateFormat='MMMM d, yyyy h:mm aa'
                 // dateFormat='dd LLL yyyy h:mm a'
                 showTimeSelect
-                timeFormat='h:mm aa'
+                // timeFormat='h:mm aa'
                 // timeFormat='HH:mm'
                 placeholder='Event Date'
               />
